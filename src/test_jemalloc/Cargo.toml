@@ -1,0 +1,20 @@
+[package]
+name = "test-jemalloc"
+version = "0.1.0"
+edition = "2021"
+# links = "jemalloc"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+#rustc-link-search = ["/usr/lib/x86_64-linux-gnu/"]
+#rustc-link-lib = ["jemalloc"]
+
+[dependencies]
+tikv-jemalloc-ctl = "0.5.0"
+tikv-jemalloc-sys = { version = "0.5.0", features = ["stats"] }
+tikv-jemallocator = { version = "0.5.0", features = ["stats", "unprefixed_malloc_on_supported_platforms"] }
+hello = {path = "../test_ffi/"}
+
+[[bin]]
+name = "test_jemalloc"
+path = "./src/jemalloc.rs"

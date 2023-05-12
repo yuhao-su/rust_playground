@@ -9,6 +9,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "50d30906286121d95be3d479533b458f87493b30a4b5f79a607db8f5d11aa91f"
 
 [[package]]
+name = "hello"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.144"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -24,6 +31,7 @@ checksum = "9f746c4065a8fa3fe23974dd82f15431cc8d40779821001404d10d2e79ca7d79"
 name = "test-jemalloc"
 version = "0.1.0"
 dependencies = [
+ "hello",
  "tikv-jemalloc-ctl",
  "tikv-jemalloc-sys",
  "tikv-jemallocator",

@@ -1,3 +1,4 @@
+use hello;
 use tikv_jemalloc_ctl::{epoch, stats};
 // use tikv_jemallocator::Jemalloc;
 
@@ -23,9 +24,12 @@ fn print_stats() {
 }
 
 fn main() {
-    let _d1 = vec![0u64; 1 << 20];
+    let _d1 = vec![0u64; 1 << 30];
     unsafe {
-    tikv_jemalloc_sys::malloc_stats_print(None, std::ptr::null_mut(), std::ptr::null_mut());
+        hello::test_alloc();
+    }
+    unsafe {
+        tikv_jemalloc_sys::malloc_stats_print(None, std::ptr::null_mut(), std::ptr::null_mut());
     }
     print_stats();
     println!("{}", _d1.len());
