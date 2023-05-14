@@ -1,5 +1,5 @@
 [target.aarch64-apple-darwin]
 rustflags = [
     # "-Clink-arg=-fuse-ld=/opt/homebrew/opt/llvm/bin/ld64.lld",
-    "-Clink-arg=-L`jemalloc-config --libdir` -Wl,-rpath,`jemalloc-config --libdir` -ljemalloc -pthread",
+    # "-Clink-arg=-L`jemalloc-config --libdir` -Wl,-rpath,`jemalloc-config --libdir` -ljemalloc -pthread",
 ]
