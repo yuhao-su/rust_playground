@@ -34,3 +34,12 @@ fn main() {
     print_stats();
     println!("{}", _d1.len());
 }
+
+#[test]
+fn test_env_var() {
+    let foo = match std::env::var("MALLOC") {
+        Ok(val) => val,
+        Err(_e) => "none!!!!".to_string(),
+    };
+    println!("{}",foo);
+}

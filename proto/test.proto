@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+message DeviceReportPropertyMessage {
+  string messageType = 1;  
+  string messageId = 2;   
+  int64 timestamp = 3;    
+  string productId = 4;  
+  string deviceId = 5;   
+  string gatewayDeviceProductId = 6;    
+  string gatewayDeviceId = 7; 
+  google.protobuf.Struct headers = 8;
+  google.protobuf.Struct properties = 9;  
+  map<string, int64> propertySourceTime = 10;   
+  map<string, string> propertyState = 11;   
+}
