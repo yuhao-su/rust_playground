@@ -24,7 +24,7 @@ fn print_stats() {
 }
 
 fn main() {
-    let _d1 = vec![0u64; 1 << 30];
+    let _d1 = vec![0u64; 1 << 20];
     unsafe {
         hello::test_alloc();
     }
